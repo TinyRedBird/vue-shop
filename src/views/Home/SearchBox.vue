@@ -3,9 +3,9 @@
   <div>
     <form action="/" class="Shop">
      <div>
-      <input type="text" value placeholder="可口可乐" name="search" class="search">
+      <input type="text" v-model="searchTerm" placeholder="输入搜索内容" name="search" class="search">
      </div>
-    <input type="submit" id="serachSubmit" class="serachBtn" value="搜索"></input>
+    <input type="submit" id="serachSubmit" class="serachBtn" value="搜索" @click="search"></input>
     </form>
    </div>
  
@@ -14,6 +14,17 @@
 <script>
  export default {
   name: 'SearchBox',
+  data(){
+    return {searchTerm: ''}
+  },
+  methods:{
+  search () {
+  this.$router.push({
+    path: '/SearchGood',
+    query: {term: this.searchTerm},
+  })
+}
+  }
  }
 </script>
 
