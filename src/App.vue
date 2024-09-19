@@ -1,5 +1,9 @@
 <template>
   <!-- 一级路由出口组件 -->
+   <div id="app">
+    <div class="background"></div>
+    <div></div>
+   </div>
   <router-view></router-view>
 </template>
 
@@ -8,20 +12,29 @@
 </script>
 
 <style>
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 #app {
   display: flex;
-  
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-align: center;
-  background-attachment: fixed;
-  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
   height: 100vh;
-    /* 加载背景图  背景图垂直、水平均居中  背景图不平铺 */
+}
+
+.background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url("E:\web code\vue\Project Vue\vue-shop\vue-shop\src\assets\piture.png");
-    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
-    /* 让背景图基于容器大小伸缩 */
   background-size: cover;
+  background-position: center;
   z-index: -1;
 }
 </style>
