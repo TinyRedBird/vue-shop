@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div class="Home-container">
   
   <SearchBox></SearchBox>
  
@@ -12,10 +12,9 @@
     <My></My>
   </div>
   
-    
-     <!-- layer -->
+    <!-- layer -->
   <div class="dailyRecommendation">
-    <Every></Every>
+    <dailyRecommendation v-for="index in 20" :key="index"></dailyRecommendation>
   </div>
  </div>
 </template>
@@ -24,11 +23,15 @@
 import Carousel from "./Carousel.vue"
 import CaregoryBox from "./CaregoryBox.vue"
 import SearchBox from '@/views/Home/SearchBox.vue'
-import Every from '@/views/Home/dailyRecommendation.vue'
+import dailyRecommendation from '@/views/Home/dailyRecommendation.vue'
 import My from './My.vue'
+
 </script>
 
 <style>
+.Home-container{
+  margin: 0 auto;
+}
 *{
  box-sizing: border-box;
 }
@@ -36,6 +39,9 @@ import My from './My.vue'
 .dailyRecommendation{
   position: relative;
   top: 40px;
+  padding: 30px;
+  width: 1400px;
+  background-color: #fff;
   margin: 0 auto;
 }
 
